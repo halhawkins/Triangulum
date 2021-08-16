@@ -1,0 +1,245 @@
+import { Component, createRef } from "react";
+import TriangleTile from "../TriangleTile/TriangleTile";
+
+class Grid extends Component {
+    constructor(props){
+        super(props);
+        this.tritile = createRef(null);
+        this.tri = [];
+        this.tricomp = [];
+        
+        for(let i = 0; i <= 190; i++){
+            this.tri[i] = createRef(null);
+            this.tricomp[i] = createRef(null);
+        }
+        this.state = {
+            activeTile: 73
+        }
+    }
+
+
+    componentDidMount(){
+        document.addEventListener("keydown",(e) => {
+            // console.log(e)
+            if(e.code === "ArrowRight" || e.code === "KeyD"){
+                // console.log("active tile = ", this.tricomp[73].current);
+                console.log("flirpy derpy doo = ", this.tricomp[72].current);
+                this.tricomp[72].current.props.orientation = 0;
+                // this.tricomp[this.state.activeTile].props.rotate = "CW";
+                //this.resetClockwiseListener();
+            }
+            else if(e.code === "ArrowLeft" || e.code === "KeyA"){
+                console.log("flirpy derpy dee = ", this.state.activeTile);
+                // this.resetCounterClockwiseListener();
+            }
+            // else if(e.code === "NumpadEnter" || e.code === "Enter"){
+                
+            // }
+        });
+        // this.tricomp[72] = <div><TriangleTile orientation="1" scalex="0.75" scaley="0.75"></TriangleTile></div>
+        // this.forceUpdate();
+    }
+
+    
+
+    render = () => {
+        return <div className="container1"><div className="container">
+
+            <div className="triangle blackbg" ref={this.tri[0]}>{this.tricomp[0]}</div>
+            <div className="triangle blackbg" ref={this.tri[1]}>{this.tricomp[1]}</div>
+            <div className="triangle blackbg" ref={this.tri[2]}>{this.tricomp[2]}</div>
+            <div className="triangle blackbg" ref={this.tri[3]}>{this.tricomp[3]}</div>
+            <div className="triangle blackbg" ref={this.tri[4]}>{this.tricomp[4]}</div>
+            <div className="triangle" ref={this.tri[5]}>{this.tricomp[5]}</div>
+            <div className="triangle" ref={this.tri[6]}>{this.tricomp[6]}</div>
+            <div className="triangle" ref={this.tri[7]}>{this.tricomp[7]}</div>
+            <div className="triangle" ref={this.tri[8]}>{this.tricomp[8]}</div>
+            <div className="triangle" ref={this.tri[9]}>{this.tricomp[9]}</div>
+            <div className="triangle" ref={this.tri[10]}>{this.tricomp[10]}</div>
+            <div className="triangle" ref={this.tri[11]}>{this.tricomp[11]}</div>
+            <div className="triangle" ref={this.tri[12]}>{this.tricomp[12]}</div>
+            <div className="triangle" ref={this.tri[13]}>{this.tricomp[13]}</div>
+            <div className="triangle" ref={this.tri[14]}>{this.tricomp[14]}</div>
+            <div className="triangle" ref={this.tri[15]}>{this.tricomp[15]}</div>
+            <div className="triangle blackbg" ref={this.tri[16]}>{this.tricomp[16]}</div>
+            <div className="triangle blackbg" ref={this.tri[17]}>{this.tricomp[17]}</div>
+            <div className="triangle blackbg" ref={this.tri[18]}>{this.tricomp[18]}</div>
+            <div className="triangle blackbg" ref={this.tri[19]}>{this.tricomp[19]}</div>
+            <div className="triangle blackbg" ref={this.tri[20]}>{this.tricomp[20]}</div>
+            <div className="triangle blackbg" ref={this.tri[21]}>{this.tricomp[21]}</div>
+            <div className="triangle blackbg" ref={this.tri[22]}>{this.tricomp[22]}</div>
+            <div className="triangle blackbg" ref={this.tri[23]}>{this.tricomp[23]}</div>
+            <div className="triangle blackbg" ref={this.tri[24]}>{this.tricomp[24]}</div>
+            <div className="triangle" ref={this.tri[25]}>{this.tricomp[25]}</div>
+            <div className="triangle" ref={this.tri[26]}>{this.tricomp[26]}</div>
+            <div className="triangle" ref={this.tri[27]}>{this.tricomp[27]}</div>
+            <div className="triangle" ref={this.tri[28]}>{this.tricomp[28]}</div>
+            <div className="triangle" ref={this.tri[29]}>{this.tricomp[29]}</div>
+            <div className="triangle" ref={this.tri[30]}>{this.tricomp[30]}</div>
+            <div className="triangle" ref={this.tri[31]}>{this.tricomp[31]}</div>
+            <div className="triangle" ref={this.tri[32]}>{this.tricomp[32]}</div>
+            <div className="triangle" ref={this.tri[33]}>{this.tricomp[33]}</div>
+            <div className="triangle" ref={this.tri[34]}>{this.tricomp[34]}</div>
+            <div className="triangle" ref={this.tri[35]}>{this.tricomp[35]}</div>
+            <div className="triangle" ref={this.tri[36]}>{this.tricomp[36]}</div>
+            <div className="triangle" ref={this.tri[37]}>{this.tricomp[37]}</div>
+            <div className="triangle blackbg" ref={this.tri[38]}>{this.tricomp[38]}</div>
+            <div className="triangle blackbg" ref={this.tri[39]}>{this.tricomp[39]}</div>
+            <div className="triangle blackbg" ref={this.tri[40]}>{this.tricomp[30]}</div>
+            <div className="triangle blackbg" ref={this.tri[41]}>{this.tricomp[41]}</div>
+            <div className="triangle blackbg" ref={this.tri[42]}>{this.tricomp[42]}</div>
+            <div className="triangle blackbg" ref={this.tri[43]}>{this.tricomp[43]}</div>
+            <div className="triangle blackbg" ref={this.tri[44]}>{this.tricomp[44]}</div>
+            <div className="triangle" ref={this.tri[45]}>{this.tricomp[45]}</div>
+            <div className="triangle" ref={this.tri[46]}>{this.tricomp[46]}</div>
+            <div className="triangle" ref={this.tri[47]}>{this.tricomp[47]}</div>
+            <div className="triangle" ref={this.tri[48]}>{this.tricomp[48]}</div>
+            <div className="triangle" ref={this.tri[49]}>{this.tricomp[49]}</div>
+            <div className="triangle" ref={this.tri[50]}>{this.tricomp[50]}</div>
+            <div className="triangle" ref={this.tri[51]}>{this.tricomp[51]}</div>
+            <div className="triangle" ref={this.tri[52]}>{this.tricomp[52]}</div>
+            <div className="triangle" ref={this.tri[53]}>{this.tricomp[53]}</div>
+            <div className="triangle" ref={this.tri[54]}>{this.tricomp[54]}</div>
+            <div className="triangle" ref={this.tri[55]}>{this.tricomp[55]}</div>
+            <div className="triangle" ref={this.tri[56]}>{this.tricomp[56]}</div>
+            <div className="triangle" ref={this.tri[57]}>{this.tricomp[57]}</div>
+            <div className="triangle" ref={this.tri[58]}>{this.tricomp[58]}</div>
+            <div className="triangle" ref={this.tri[59]}>{this.tricomp[59]}</div>
+            <div className="triangle blackbg" ref={this.tri[60]}>{this.tricomp[60]}</div>
+            <div className="triangle blackbg" ref={this.tri[61]}>{this.tricomp[61]}</div>
+            <div className="triangle blackbg" ref={this.tri[62]}>{this.tricomp[62]}</div>
+            <div className="triangle blackbg" ref={this.tri[63]}>{this.tricomp[63]}</div>
+            <div className="triangle blackbg" ref={this.tri[64]}>{this.tricomp[64]}</div>
+            <div className="triangle" ref={this.tri[65]}>{this.tricomp[65]}</div>
+            <div className="triangle" ref={this.tri[66]}>{this.tricomp[66]}</div>
+            <div className="triangle" ref={this.tri[67]}>{this.tricomp[67]}</div>
+            <div className="triangle" ref={this.tri[68]}>{this.tricomp[68]}</div>
+            <div className="triangle" ref={this.tri[69]}>{this.tricomp[69]}</div>
+            <div className="triangle" ref={this.tri[70]}>{this.tricomp[70]}</div>
+            <div className="triangle" ref={this.tri[71]}>{this.tricomp[71]}</div>
+            <div className="triangle filled" ref={this.tri[72]}>{this.tricomp[72]}</div>
+            <div className="triangle filled" id="first" ref={this.tri[73]}>{this.tricomp[73]}<div><TriangleTile scalex="0.75" scaley="0.75" orientation="0" ref={this.tritile1} first={true} startpoint="1"></TriangleTile></div></div>
+            <div className="triangle" ref={this.tri[74]}>{this.tricomp[74]}</div>
+            <div className="triangle" ref={this.tri[75]}>{this.tricomp[75]}</div>
+            <div className="triangle" ref={this.tri[76]}>{this.tricomp[76]}</div>
+            <div className="triangle" ref={this.tri[77]}>{this.tricomp[77]}</div>
+            <div className="triangle" ref={this.tri[78]}>{this.tricomp[78]}</div>
+            <div className="triangle" ref={this.tri[79]}>{this.tricomp[79]}</div>
+            <div className="triangle" ref={this.tri[80]}>{this.tricomp[80]}</div>
+            <div className="triangle" ref={this.tri[81]}>{this.tricomp[81]}</div>
+            <div className="triangle blackbg" ref={this.tri[82]}>{this.tricomp[82]}</div>
+            <div className="triangle blackbg" ref={this.tri[83]}>{this.tricomp[83]}</div>
+            <div className="triangle blackbg" ref={this.tri[84]}>{this.tricomp[84]}</div>
+            <div className="triangle blackbg" ref={this.tri[85]}>{this.tricomp[85]}</div>
+            <div className="triangle" ref={this.tri[86]}>{this.tricomp[86]}</div>
+            <div className="triangle" ref={this.tri[87]}>{this.tricomp[87]}</div>
+            <div className="triangle" ref={this.tri[88]}>{this.tricomp[88]}</div>
+            <div className="triangle" ref={this.tri[89]}>{this.tricomp[89]}</div>
+            <div className="triangle" ref={this.tri[90]}>{this.tricomp[90]}</div>
+            <div className="triangle" ref={this.tri[91]}>{this.tricomp[91]}</div>
+            <div className="triangle" ref={this.tri[92]}>{this.tricomp[92]}</div>
+            <div className="triangle" ref={this.tri[93]}>{this.tricomp[93]}</div>
+            <div className="triangle center-tri" id="center-tile" ref={this.tri[94]}>{this.tricomp[94]}</div>
+            <div className="triangle" ref={this.tri[95]}>{this.tricomp[95]}</div>
+            <div className="triangle" ref={this.tri[96]}>{this.tricomp[96]}</div>
+            <div className="triangle" ref={this.tri[97]}>{this.tricomp[97]}</div>
+            <div className="triangle" ref={this.tri[98]}>{this.tricomp[98]}</div>
+            <div className="triangle" ref={this.tri[99]}>{this.tricomp[99]}</div>
+            <div className="triangle" ref={this.tri[100]}>{this.tricomp[100]}</div>
+            <div className="triangle" ref={this.tri[101]}>{this.tricomp[101]}</div>
+            <div className="triangle" ref={this.tri[102]}>{this.tricomp[102]}</div>
+            <div className="triangle blackbg" ref={this.tri[103]}>{this.tricomp[103]}</div>
+            <div className="triangle blackbg" ref={this.tri[104]}>{this.tricomp[104]}</div>
+            <div className="triangle blackbg" ref={this.tri[105]}>{this.tricomp[105]}</div>
+            <div className="triangle blackbg" ref={this.tri[106]}>{this.tricomp[106]}</div>
+            <div className="triangle blackbg" ref={this.tri[107]}>{this.tricomp[107]}</div>
+            <div className="triangle" ref={this.tri[108]}>{this.tricomp[108]}</div>
+            <div className="triangle" ref={this.tri[109]}>{this.tricomp[109]}</div>
+            <div className="triangle" ref={this.tri[110]}>{this.tricomp[110]}</div>
+            <div className="triangle" ref={this.tri[111]}>{this.tricomp[111]}</div>
+            <div className="triangle" ref={this.tri[112]}>{this.tricomp[112]}</div>
+            <div className="triangle" ref={this.tri[113]}>{this.tricomp[113]}</div>
+            <div className="triangle" ref={this.tri[114]}>{this.tricomp[114]}</div>
+            <div className="triangle" ref={this.tri[115]}>{this.tricomp[115]}</div>
+            <div className="triangle" ref={this.tri[116]}>{this.tricomp[116]}</div>
+            <div className="triangle" ref={this.tri[117]}>{this.tricomp[117]}</div>
+            <div className="triangle" ref={this.tri[118]}>{this.tricomp[118]}</div>
+            <div className="triangle" ref={this.tri[119]}>{this.tricomp[119]}</div>
+            <div className="triangle" ref={this.tri[110]}>{this.tricomp[120]}</div>
+            <div className="triangle" ref={this.tri[121]}>{this.tricomp[121]}</div>
+            <div className="triangle" ref={this.tri[122]}>{this.tricomp[122]}</div>
+            <div className="triangle blackbg" ref={this.tri[123]}>{this.tricomp[123]}</div>
+            <div className="triangle blackbg" ref={this.tri[124]}>{this.tricomp[124]}</div>
+            <div className="triangle blackbg" ref={this.tri[125]}>{this.tricomp[125]}</div>
+            <div className="triangle blackbg" ref={this.tri[126]}>{this.tricomp[126]}</div>
+            <div className="triangle blackbg" ref={this.tri[127]}>{this.tricomp[127]}</div>
+            <div className="triangle blackbg" ref={this.tri[128]}>{this.tricomp[128]}</div>
+            <div className="triangle blackbg" ref={this.tri[129]}>{this.tricomp[129]}</div>
+            <div className="triangle" ref={this.tri[130]}>{this.tricomp[130]}</div>
+            <div className="triangle" ref={this.tri[131]}>{this.tricomp[131]}</div>
+            <div className="triangle" ref={this.tri[132]}>{this.tricomp[132]}</div>
+            <div className="triangle" ref={this.tri[133]}>{this.tricomp[133]}</div>
+            <div className="triangle" ref={this.tri[134]}>{this.tricomp[134]}</div>
+            <div className="triangle" ref={this.tri[135]}>{this.tricomp[135]}</div>
+            <div className="triangle" ref={this.tri[136]}>{this.tricomp[136]}</div>
+            <div className="triangle" ref={this.tri[137]}>{this.tricomp[137]}</div>
+            <div className="triangle" ref={this.tri[138]}>{this.tricomp[138]}</div>
+            <div className="triangle" ref={this.tri[139]}>{this.tricomp[139]}</div>
+            <div className="triangle" ref={this.tri[140]}>{this.tricomp[140]}</div>
+            <div className="triangle" ref={this.tri[141]}>{this.tricomp[141]}</div>
+            <div className="triangle" ref={this.tri[142]}>{this.tricomp[142]}</div>
+            <div className="triangle blackbg" ref={this.tri[143]}>{this.tricomp[143]}</div>
+            <div className="triangle blackbg" ref={this.tri[144]}>{this.tricomp[144]}</div>
+            <div className="triangle blackbg" ref={this.tri[145]}>{this.tricomp[145]}</div>
+            <div className="triangle blackbg" ref={this.tri[146]}>{this.tricomp[146]}</div>
+            <div className="triangle blackbg" ref={this.tri[147]}>{this.tricomp[147]}</div>
+            <div className="triangle blackbg" ref={this.tri[148]}>{this.tricomp[148]}</div>
+            <div className="triangle blackbg" ref={this.tri[149]}>{this.tricomp[149]}</div>
+            <div className="triangle blackbg" ref={this.tri[150]}>{this.tricomp[150]}</div>
+            <div className="triangle blackbg" ref={this.tri[151]}>{this.tricomp[151]}</div>
+            <div className="triangle" ref={this.tri[152]}>{this.tricomp[152]}</div>
+            <div className="triangle" ref={this.tri[153]}>{this.tricomp[153]}</div>
+            <div className="triangle" ref={this.tri[154]}>{this.tricomp[154]}</div>
+            <div className="triangle" ref={this.tri[155]}>{this.tricomp[155]}</div>
+            <div className="triangle" ref={this.tri[156]}>{this.tricomp[156]}</div>
+            <div className="triangle" ref={this.tri[157]}>{this.tricomp[157]}</div>
+            <div className="triangle" ref={this.tri[158]}>{this.tricomp[158]}</div>
+            <div className="triangle" ref={this.tri[159]}>{this.tricomp[159]}</div>
+            <div className="triangle" ref={this.tri[160]}>{this.tricomp[160]}</div>
+            <div className="triangle" ref={this.tri[161]}>{this.tricomp[161]}</div>
+            <div className="triangle" ref={this.tri[162]}>{this.tricomp[162]}</div>
+            <div className="triangle blackbg" ref={this.tri[163]}>{this.tricomp[163]}</div>
+            <div className="triangle blackbg" ref={this.tri[164]}>{this.tricomp[164]}</div>
+            <div className="triangle blackbg" ref={this.tri[165]}>{this.tricomp[165]}</div>
+            <div className="triangle blackbg" ref={this.tri[166]}>{this.tricomp[166]}</div>
+            <div className="triangle blackbg" ref={this.tri[167]}>{this.tricomp[167]}</div>
+            <div className="triangle blackbg" ref={this.tri[168]}>{this.tricomp[168]}</div>
+            <div className="triangle blackbg" ref={this.tri[169]}>{this.tricomp[169]}</div>
+            <div className="triangle blackbg" ref={this.tri[170]}>{this.tricomp[170]}</div>
+            <div className="triangle blackbg" ref={this.tri[171]}>{this.tricomp[171]}</div>
+            <div className="triangle blackbg" ref={this.tri[172]}>{this.tricomp[172]}</div>
+            <div className="triangle blackbg" ref={this.tri[173]}>{this.tricomp[173]}</div>
+            <div className="triangle blackbg" ref={this.tri[174]}>{this.tricomp[174]}</div>
+            <div className="triangle blackbg" ref={this.tri[175]}>{this.tricomp[175]}</div>
+            <div className="triangle blackbg" ref={this.tri[176]}>{this.tricomp[176]}</div> 
+            <div className="triangle blackbg" ref={this.tri[177]}>{this.tricomp[177]}</div>
+            <div className="triangle blackbg" ref={this.tri[178]}>{this.tricomp[178]}</div>
+            <div className="triangle blackbg" ref={this.tri[179]}>{this.tricomp[179]}</div>
+            <div className="triangle blackbg" ref={this.tri[180]}>{this.tricomp[180]}</div>
+            <div className="triangle blackbg" ref={this.tri[181]}>{this.tricomp[181]}</div>
+            <div className="triangle blackbg" ref={this.tri[182]}>{this.tricomp[182]}</div>
+            <div className="triangle blackbg" ref={this.tri[183]}>{this.tricomp[183]}</div>
+            <div className="triangle blackbg" ref={this.tri[184]}>{this.tricomp[184]}</div>
+            <div className="triangle blackbg" ref={this.tri[185]}>{this.tricomp[185]}</div>
+            <div className="triangle blackbg" ref={this.tri[186]}>{this.tricomp[186]}</div>
+            <div className="triangle blackbg" ref={this.tri[187]}>{this.tricomp[187]}</div>
+            <div className="triangle blackbg" ref={this.tri[188]}>{this.tricomp[188]}</div>
+            <div className="triangle blackbg" ref={this.tri[189]}>{this.tricomp[189]}</div>
+            <div className="triangle blackbg" ref={this.tri[190]}>{this.tricomp[190]}</div>
+
+        </div></div>
+
+    }
+}
+
+export default Grid;
