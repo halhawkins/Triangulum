@@ -25,6 +25,7 @@ class Grid extends Component {
             activeTile: 92,
             startpoint: 1,
             currentPlayer: 0,
+            gameOver: false,
             player:[
                 {
                     path:[
@@ -78,7 +79,8 @@ class Grid extends Component {
 
     handleEnter = () => {
 
-
+        if(this.state.gameOver)
+            return;
         if(this.accumulatedScore === 0)
             this.accumulatedScore = 2;
         else
@@ -111,7 +113,12 @@ class Grid extends Component {
         this.state.tritile[this.state.activeTile].current.draw();
         
         let newPath = this.getNextStartPoint(this.state.activeTile,this.state.tritile[this.state.activeTile].current.getOrientation(),currentPath.endpoint);
-        
+        //if(newPath.newendpoint === 0){
+        //     this.setState(
+        //         {gameOver: true}
+        //     );
+        //     return;
+        // }
         this.setState({
             activeTile: newPath.newtileindex,
             startpoint: newPath.newstartpoint,
@@ -121,6 +128,20 @@ class Grid extends Component {
         this.setState({
             totalScore: this.state.totalScore + this.accumulatedScore
         });
+        if(typeof(this.state.tritile[this.state.activeTile].current.classList) !== "undefined")
+            if(this.state.tritile[this.state.activeTile].current.classList[0] === 'emptytriangle'){ 
+                this.setState({
+                    gameOver: true
+                });
+                return;           
+            }
+            console.log("current = " ,this.state.tritile[this.state.activeTile].current.classList);
+        // if(!this.state.tritile[this.state.activeTile].current.className){
+        //     this.setState({
+        //         gameOver: true
+        //     });
+        //     return;
+        // }
         if(this.state.tritile[this.state.activeTile].current.getShow())
             this.handleEnter();
         this.state.tritile[this.state.activeTile].current.show();
@@ -257,9 +278,9 @@ class Grid extends Component {
                         <div className="blackbg" ref={this.tri[0]} id="firsttile"></div>
                         {GridData.tiles.map((item,i) => {
                             return item.nontile === true?
-                                <div className="blackbg" key={"div" + i.toString()} ref={this.tri[i]}></div>
+                                <div className="blackbg" key={"div" + i.toString()} nontile={true} ref={this.tri[i]}></div>
                                 :
-                                <div className="triangle " ref={this.tri[i]} key={"div" + i.toString()}><TriangleTile key={"tri" + i.toString()} show={item.show} orientation={item.orientation} segOwners={item.segOwners} seg={item.seg} rotate={item.rotate} ref={this.state.tritile[i]}></TriangleTile></div>
+                                <div className="triangle " ref={this.tri[i]} nontile={false} key={"div" + i.toString()}><TriangleTile key={"tri" + i.toString()} show={item.show} orientation={item.orientation} segOwners={item.segOwners} seg={item.seg} rotate={item.rotate} ref={this.state.tritile[i]}></TriangleTile></div>
                         })}
                     </div>
                 </div>

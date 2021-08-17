@@ -78,6 +78,10 @@ class TriangleTile extends Component {
         this.setState({show:true});
     }
 
+    isTile = () => {
+        return !this.props.nontile;
+    }
+
     getShow = () => {
         return this.state.show;
     }
